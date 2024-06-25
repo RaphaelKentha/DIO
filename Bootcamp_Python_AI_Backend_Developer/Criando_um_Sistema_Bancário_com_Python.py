@@ -50,6 +50,8 @@ while operacao != '4':
         print(f'Desaja realizar outra operação?')
         if input('Digite "S" ou "N": ').lower() == 'n':
             operacao = '4'
+        else:
+            print('Operações disponíveis: \n1 - depósito\n2 - saque\n3 - extrato\n4 - sair')
     elif operacao == '2':
         valor = float(input('Digite o valor do saque: '))
         saldo, saques = saque(valor, saldo, extrato, saques)
@@ -57,11 +59,15 @@ while operacao != '4':
         print(f'Desaja realizar outra operação?')
         if input('Digite "S" ou "N": ').lower() == 'n':
             operacao = '4'
+        else:
+            print('Operações disponíveis: \n1 - depósito\n2 - saque\n3 - extrato\n4 - sair')
     elif operacao == '3':
         extrato_bancario(saldo, extrato)
         print(f'Desaja realizar outra operação?')
         if input('Digite "S" ou "N": ').lower() == 'n':
             operacao = '4'
+        else:
+            print('Operações disponíveis: \n1 - depósito\n2 - saque\n3 - extrato\n4 - sair')
     elif operacao == '4':
         print('Obrigado por utilizar o Banco Python')
     else:
