@@ -17,17 +17,19 @@ def deposito(valor, saldo, extrato):
     return saldo
 
 def saque(valor, saldo, extrato, saques):
-    if valor > 500:
-        print('O valor máximo para saque é de R$ 500')
-    elif saldo < valor:
-        print('Saldo insuficiente')
-    elif saques == 3:
-        print('Limite de saques diários atingido')
-    else:
-        saldo -= valor
-        extrato.append(f'Saque: R$ {valor:.2f}')
-        saques += 1
-    return saldo, saques
+    while True:
+        if valor > 500:
+            print('O valor máximo para saque é de R$ 500')
+        elif saldo < valor:
+            print('Saldo insuficiente')
+        elif saques == 3:
+            print('Limite de saques diários atingido')
+        else:
+            saldo -= valor
+            extrato.append(f'Saque: R$ {valor:.2f}')
+            saques += 1
+            print(f'Saque de R$ {valor:.2f} realizado com sucesso')
+        return saldo, saques
 
 def extrato_bancario(saldo, extrato):
     print(f'Saldo: R$ {saldo:.2f}')
@@ -55,12 +57,12 @@ while operacao != '4':
     elif operacao == '2':
         valor = float(input('Digite o valor do saque: '))
         saldo, saques = saque(valor, saldo, extrato, saques)
-        print(f'Saque de R$ {valor:.2f} realizado com sucesso')
         print(f'Desaja realizar outra operação?')
         if input('Digite "S" ou "N": ').lower() == 'n':
             operacao = '4'
         else:
             print('Operações disponíveis: \n1 - depósito\n2 - saque\n3 - extrato\n4 - sair')
+
     elif operacao == '3':
         extrato_bancario(saldo, extrato)
         print(f'Desaja realizar outra operação?')
