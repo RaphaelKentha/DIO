@@ -30,3 +30,7 @@ print(frase[::-1]) #imprime a frase de tras para frente
 
 #strind de multiplas linhas
 # comentario com """ xxxxxx """
+
+numeros =[1,1,11,11,1,2,3,4,5,6,7,8,9,10]
+set_numeros = set(numeros) #cria um conjunto com os numeros da lista sem repeticao
+print(set_numeros) #imprime o conteudo da variavel set_numeros
